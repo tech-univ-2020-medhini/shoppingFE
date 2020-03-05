@@ -7,7 +7,7 @@ import TotalCard from '../../components/TotalCard';
 import Button from '../../components/Button';
 import './index.css';
 
-const CartPage = (props) => {
+const CartPage = () => {
   const history = useHistory();
   const [productsList, setProductsList] = useState([]);
   const [filteredProducts, setFilteredProducts] = useState({});
@@ -19,9 +19,6 @@ const CartPage = (props) => {
       let cart = 0;
       const productResponse = await axios.get('http://localhost:8080/products');
       setProductsList(productResponse.data);
-      //   const categoriesResponse = await axios.get('http://localhost:8080/categories');
-      //   setCategories(categoriesResponse.data);
-      //   console.log(productList);
       productResponse.data.forEach((product) => {
         if (product.cart !== 0) {
           if (filteredProducts[product.category] === undefined) {

@@ -1,7 +1,6 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import ProductCard from '../../components/ProductCard';
-import FilterBar from '../../components/FilterBar';
 import './index.css';
 
 const ProductList = (props) => {
@@ -46,7 +45,6 @@ const ProductList = (props) => {
       <p>
         {filterCategory}
       </p>
-      <FilterBar />
       <div className="songs-container">
         {products}
       </div>
