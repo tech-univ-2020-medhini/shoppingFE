@@ -6,8 +6,9 @@ import './index.css';
 
 const ProductList = (props) => {
   const { filterCategory, productList } = props;
-  let products;
-  if (filterCategory === 'All') {
+  console.log(productList, filterCategory);
+  let products = [];
+  if (filterCategory === 'All' && productList !== undefined) {
     productList.forEach((product) => {
       products.push(<ProductCard
         id={product.id}
@@ -18,8 +19,10 @@ const ProductList = (props) => {
         key={product.id}
       />);
     });
-  } else if (filterCategory !== undefined) {
-    products = productList.map((product) => (
+  } else if (filterCategory !== undefined && productList !== undefined) {
+    console.log('insile');
+    const filteredProducts = productList.filter((product) => product.category === filterCategory);
+    products = filteredProducts.map((product) => (
       <ProductCard
         id={product.id}
         name={product.name}
