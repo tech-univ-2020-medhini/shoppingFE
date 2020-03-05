@@ -5,10 +5,10 @@ import './index.css';
 
 function FilterBar(props) {
   const { categoryList, onCLickFilter } = props;
-  const categories = [<button type="button" className="category-button" onClick={onCLickFilter}>All</button>];
+  const categories = [<button type="button" className="category-button" onClick={() => onCLickFilter('All')}>All</button>];
   if (categoryList !== undefined) {
     categoryList.forEach((category) => {
-      categories.push(<button type="button" className="category-button" onClick={onCLickFilter}>{category}</button>);
+      categories.push(<button type="button" className="category-button" onClick={() => onCLickFilter(category)}>{category}</button>);
     });
   }
 
