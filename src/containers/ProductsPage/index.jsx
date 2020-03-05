@@ -6,7 +6,7 @@ import FilterBar from '../../components/FilterBar';
 import './index.css';
 
 const ProductsPage = (props) => {
-  const { productList } = props;
+  const { productList, cartCount, setCartCount } = props;
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('All');
   useEffect(() => {
@@ -20,12 +20,14 @@ const ProductsPage = (props) => {
     <div className="products-page">
       <div>Filter categories</div>
       <FilterBar categoryList={categories} onCLickFilter={setSelectedCategory} />
-      <ProductList filterCategory={selectedCategory} productList={productList} />
+      <ProductList filterCategory={selectedCategory} productList={productList} cartCount={cartCount} setCartCount={setCartCount} />
     </div>
   );
 };
 ProductsPage.propTypes = {
   productList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  cartCount: PropTypes.number.isRequired,
+  setCartCount: PropTypes.func.isRequired,
 };
 
 export default ProductsPage;

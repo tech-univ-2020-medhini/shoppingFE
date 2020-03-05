@@ -12,6 +12,7 @@ import ProductsPage from './containers/ProductsPage';
 
 function App() {
   const [productList, setProductsList] = useState([]);
+  const [cartCount, setCartCount] = useState(0);
   useEffect(() => {
     const getProducts = async () => {
       const response = await axios.get('http://localhost:8080/products');
@@ -28,7 +29,11 @@ function App() {
         <Switch>
           <Route exact path="/cart" />
           <Route path="/">
-            <ProductsPage productList={productList} />
+            <ProductsPage
+              productList={productList}
+              cartCount={cartCount}
+              setCartCount={setCartCount}
+            />
           </Route>
         </Switch>
       </Router>

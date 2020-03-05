@@ -5,8 +5,9 @@ import FilterBar from '../../components/FilterBar';
 import './index.css';
 
 const ProductList = (props) => {
-  const { filterCategory, productList } = props;
-  console.log(productList, filterCategory);
+  const {
+    filterCategory, productList, cartCount, setCartCount,
+  } = props;
   let products = [];
   if (filterCategory === 'All' && productList !== undefined) {
     productList.forEach((product) => {
@@ -17,10 +18,12 @@ const ProductList = (props) => {
         cart={product.cart}
         imageLink={product.imageLink}
         key={product.id}
+        quantity={product.quantity}
+        cartCount={cartCount}
+        setCartCount={setCartCount}
       />);
     });
   } else if (filterCategory !== undefined && productList !== undefined) {
-    console.log('insile');
     const filteredProducts = productList.filter((product) => product.category === filterCategory);
     products = filteredProducts.map((product) => (
       <ProductCard
@@ -29,7 +32,10 @@ const ProductList = (props) => {
         price={product.price}
         cart={product.cart}
         imageLink={product.imageLink}
+        quantity={product.quantity}
         key={product.id}
+        cartCount={cartCount}
+        setCartCount={setCartCount}
       />
     ));
   }
@@ -50,5 +56,7 @@ const ProductList = (props) => {
 ProductList.propTypes = {
   filterCategory: PropTypes.string.isRequired,
   productList: PropTypes.arrayOf(PropTypes.object).isRequired,
+  cartCount: PropTypes.number.isRequired,
+  setCartCount: PropTypes.func.isRequired,
 };
 export default ProductList;
