@@ -1,10 +1,10 @@
 import React from 'react';
 import PropTypes from 'prop-types';
 import './index.css';
-import Button from './components/Button';
+import Button from '../Button';
 
 function TotalCard(props) {
-  const { total } = props;
+  const { total, onClickHandler } = props;
 
   return (
     <div className="total-card">
@@ -18,7 +18,7 @@ function TotalCard(props) {
         {total}
       </div>
       <hr />
-      <Button />
+      <Button buttonColor="yellow" text="Checkout" onClickHandler={onClickHandler} />
 
     </div>
 
@@ -26,6 +26,7 @@ function TotalCard(props) {
 }
 TotalCard.propTypes = {
   total: PropTypes.number.isRequired,
+  onClickHandler: PropTypes.func.isRequired,
 };
 
 export default TotalCard;

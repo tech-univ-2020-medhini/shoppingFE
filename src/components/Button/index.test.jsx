@@ -1,11 +1,11 @@
 import React from 'react';
 import { render, fireEvent } from '@testing-library/react';
-import TotalCard from './index';
+import Button from './index';
 
 
-describe('the total card', () => {
+describe('the button', () => {
   it('should render correctly', () => {
-    const { asFragment } = render(<TotalCard />);
+    const { asFragment } = render(<Button />);
 
     expect(asFragment()).toMatchSnapshot();
   });

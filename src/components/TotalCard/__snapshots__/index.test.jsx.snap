@@ -1,0 +1,29 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the total card should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="total-card"
+  >
+    <div
+      class="total"
+    >
+      Total
+    </div>
+    <div
+      class="rs"
+    >
+      RS
+    </div>
+    <div
+      class="price"
+    />
+    <hr />
+    <button
+      type="button"
+    >
+      Checkout
+    </button>
+  </div>
+</DocumentFragment>
+`;
