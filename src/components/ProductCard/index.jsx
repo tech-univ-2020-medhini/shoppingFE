@@ -6,7 +6,7 @@ import Counter from '../Counter';
 
 function ProductCard(props) {
   const {
-    name, imageLink, price, cart, onClickCounter,
+    id, name, imageLink, price, cart, onClickCounter,
   } = props;
   return (
     <div className="product-card">
@@ -27,6 +27,7 @@ function ProductCard(props) {
   );
 }
 ProductCard.propTypes = {
+  id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   imageLink: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
