@@ -13,8 +13,7 @@
 }
 .product-header{
     display: flex;
-    flex-direction: column;
-    flex-wrap: wrap;
+    flex-direction: row;
     justify-content: space-around;
     padding: 1rem;
     margin: 1rem;

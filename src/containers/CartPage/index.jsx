@@ -50,7 +50,7 @@ const CartPage = () => {
   };
   return (
     <div className="cart-page">
-      <div className="text">
+      <div className="cart-text">
         Your Shopping Cart (
         {cartCount}
         {' '}
@@ -58,8 +58,10 @@ const CartPage = () => {
       </div>
       <div className="cart-page-display">
         <Table filteredProducts={filteredProducts} />
-        <TotalCard total={totalCost} onClickHandler={onCheckout} />
-        <Button buttonColor="grey" text="Continue Shopping" onClickHandler={onContinueShopping} />
+        <div className="card-and-button">
+          <TotalCard total={totalCost} onClickHandler={onCheckout} />
+          <Button buttonColor="grey" text="Continue Shopping" onClickHandler={onContinueShopping} />
+        </div>
       </div>
     </div>
   );
