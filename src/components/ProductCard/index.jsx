@@ -6,7 +6,7 @@ import Counter from '../Counter';
 
 function ProductCard(props) {
   const {
-    name, imageLink, quantity, price,
+    name, imageLink, price, cart, onClickCounter,
   } = props;
   return (
     <div className="product-card">
@@ -21,7 +21,7 @@ function ProductCard(props) {
         {' '}
         /
       </p>
-      <Counter max={quantity} />
+      <Counter cart={cart} onClickCounter={onClickCounter} />
     </div>
 
   );
@@ -30,7 +30,8 @@ ProductCard.propTypes = {
   name: PropTypes.string.isRequired,
   imageLink: PropTypes.string.isRequired,
   price: PropTypes.number.isRequired,
-  quantity: PropTypes.number.isRequired,
+  cart: PropTypes.number.isRequired,
+  onClickCounter: PropTypes.func.isRequired,
 };
 
 export default ProductCard;

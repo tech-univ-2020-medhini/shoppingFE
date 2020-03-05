@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the product cards should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="product-card"
+  >
+    <img />
+    <p />
+    <p>
+      MRP  /
+    </p>
+    <div
+      class="counter"
+    >
+      <button
+        class="counter-button"
+        type="button"
+      >
+        -
+      </button>
+      <button
+        class="counter-button"
+        type="button"
+      >
+        +
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
