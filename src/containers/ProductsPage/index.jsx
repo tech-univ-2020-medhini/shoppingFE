@@ -18,8 +18,12 @@ const ProductsPage = (props) => {
   }, []);
   return (
     <div className="products-page">
-      <div className="product-page-text">Filter categories</div>
-      <FilterBar categoryList={categories} onCLickFilter={setSelectedCategory} />
+      <div className="products-header">
+        <div className="product-page-text">
+          Filter categories
+        </div>
+        <FilterBar categoryList={categories} onCLickFilter={setSelectedCategory} />
+      </div>
       <ProductList filterCategory={selectedCategory} productList={productList} cartCount={cartCount} setCartCount={setCartCount} />
     </div>
   );

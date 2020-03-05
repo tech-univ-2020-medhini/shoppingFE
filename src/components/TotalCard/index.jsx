@@ -8,18 +8,21 @@ function TotalCard(props) {
 
   return (
     <div className="total-card">
-      <div className="total">
-        Total
-      </div>
-      <div className="rs">
-        RS
-      </div>
-      <div className="price">
-        {total}
+      <div className="total-card-text">
+        <div className="total">
+          Total
+        </div>
+        <div className="rs">
+          RS
+        </div>
+        <div className="price">
+          {total}
+        </div>
       </div>
       <hr />
-      <Button buttonColor="yellow" text="Checkout" onClickHandler={onClickHandler} />
-
+      <div className="total-checkout">
+        <Button buttonColor="yellow" text="Checkout" onClickHandler={onClickHandler} />
+      </div>
     </div>
 
   );

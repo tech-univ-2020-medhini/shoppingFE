@@ -1,0 +1,19 @@
+.button-yellow{
+    background-color: rgb(238,195,92);
+    height: 2rem;
+    width: 10em;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    margin: 1rem;
+}
+.button-white{
+    background-color: rgb(255, 255, 255);
+    height: 2rem;
+    width: 10em;
+    color: white;
+    font-size: 1.1rem;
+    border-radius: 6px;
+    margin: 1rem;
+    color: black;
+}

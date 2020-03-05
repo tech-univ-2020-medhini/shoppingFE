@@ -1,0 +1,7 @@
+table, th, td{
+   border-collapse:collapse; 
+}
+.table-category{
+    background-color: rgb(196,196,196);
+    text-align: left;
+}

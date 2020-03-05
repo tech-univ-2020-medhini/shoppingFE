@@ -41,11 +41,11 @@ const ProductList = (props) => {
 
 
   return (
-    <div className="Song-page">
+    <div className="products-container">
       <p>
         {filterCategory}
       </p>
-      <div className="songs-container">
+      <div className="products-list">
         {products}
       </div>
     </div>

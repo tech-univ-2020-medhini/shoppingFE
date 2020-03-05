@@ -56,9 +56,11 @@ const CartPage = () => {
         {' '}
         items)
       </div>
-      <Table filteredProducts={filteredProducts} />
-      <TotalCard total={totalCost} onClickHandler={onCheckout} />
-      <Button buttonColor="grey" text="Continue Shopping" onClickHandler={onContinueShopping} />
+      <div className="cart-page-display">
+        <Table filteredProducts={filteredProducts} />
+        <TotalCard total={totalCost} onClickHandler={onCheckout} />
+        <Button buttonColor="grey" text="Continue Shopping" onClickHandler={onContinueShopping} />
+      </div>
     </div>
   );
 };

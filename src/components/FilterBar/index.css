@@ -5,6 +5,7 @@
     flex-wrap: wrap;
     padding: 0rem;
     justify-content: center;
+    height: 2rem;
 }
 .category-button{
     display:flex;

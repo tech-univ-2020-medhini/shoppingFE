@@ -1,0 +1,7 @@
+.products-list{
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 1rem;
+    justify-content: space-around;
+}

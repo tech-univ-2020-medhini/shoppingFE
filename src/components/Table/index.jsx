@@ -8,7 +8,7 @@ function Table(props) {
   if (filteredProducts !== undefined) {
     const categories = Object.keys(filteredProducts);
     categories.forEach((category) => {
-      productsJSX.push(<tr><td colSpan={4}>{category}</td></tr>);
+      productsJSX.push(<tr><td className="table-category" colSpan={4}>{category}</td></tr>);
       const products = filteredProducts[category];
       products.forEach((product) => {
         productsJSX.push(
@@ -25,7 +25,7 @@ function Table(props) {
 
   return (
     <div className="table">
-      <table>
+      <table border={1}>
         <tr>
           <th>
             Item
@@ -39,8 +39,12 @@ function Table(props) {
           <th>
             Subtotal
           </th>
+
         </tr>
-        {productsJSX}
+        <tbody>
+          {productsJSX}
+        </tbody>
+
       </table>
     </div>
 
