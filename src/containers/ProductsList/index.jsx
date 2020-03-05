@@ -8,35 +8,71 @@ const ProductList = (props) => {
     filterCategory, productList, cartCount, setCartCount,
   } = props;
   let products = [];
+  const soldOutProducts = [];
   if (filterCategory === 'All' && productList !== undefined) {
     productList.forEach((product) => {
-      products.push(<ProductCard
-        id={product.id}
-        name={product.name}
-        price={product.price}
-        cart={product.cart}
-        imageLink={product.imageLink}
-        key={product.id}
-        quantity={product.quantity}
-        cartCount={cartCount}
-        setCartCount={setCartCount}
-      />);
+      if (product.cart !== product.quantity) {
+        products.push(<ProductCard
+          cardStyle="normal"
+          id={product.id}
+          name={product.name}
+          price={product.price}
+          cart={product.cart}
+          imageLink={product.imageLink}
+          key={product.id}
+          quantity={product.quantity}
+          cartCount={cartCount}
+          setCartCount={setCartCount}
+        />);
+      } else {
+        soldOutProducts.push(<ProductCard
+          cardStyle="sold-out"
+          id={product.id}
+          name={product.name}
+          price={product.price}
+          cart={product.cart}
+          imageLink={product.imageLink}
+          key={product.id}
+          quantity={product.quantity}
+          cartCount={cartCount}
+          setCartCount={setCartCount}
+        />);
+      }
     });
+    products = [...products, ...soldOutProducts];
   } else if (filterCategory !== undefined && productList !== undefined) {
     const filteredProducts = productList.filter((product) => product.category === filterCategory);
-    products = filteredProducts.map((product) => (
-      <ProductCard
-        id={product.id}
-        name={product.name}
-        price={product.price}
-        cart={product.cart}
-        imageLink={product.imageLink}
-        quantity={product.quantity}
-        key={product.id}
-        cartCount={cartCount}
-        setCartCount={setCartCount}
-      />
-    ));
+    filteredProducts.forEach((product) => {
+      if (product.quantity !== product.cart) {
+        products.push(<ProductCard
+          cardStyle="normal"
+          id={product.id}
+          name={product.name}
+          price={product.price}
+          cart={product.cart}
+          imageLink={product.imageLink}
+          quantity={product.quantity}
+          key={product.id}
+          cartCount={cartCount}
+          setCartCount={setCartCount}
+        />);
+      } else {
+        soldOutProducts.push(<ProductCard
+          cardStyle="sold-out"
+          id={product.id}
+          name={product.name}
+          price={product.price}
+          cart={product.cart}
+          imageLink={product.imageLink}
+          quantity={product.quantity}
+          key={product.id}
+          cartCount={cartCount}
+          setCartCount={setCartCount}
+        />);
+      }
+    });
+    console.log(products);
+    products = [...products, ...soldOutProducts];
   }
 
 

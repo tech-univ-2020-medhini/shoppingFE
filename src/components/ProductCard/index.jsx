@@ -6,10 +6,10 @@ import Counter from '../Counter';
 
 function ProductCard(props) {
   const {
-    id, name, imageLink, price, cart, quantity, cartCount, setCartCount,
+    id, name, imageLink, price, cart, quantity, cartCount, setCartCount, cardStyle,
   } = props;
   return (
-    <div className="product-card">
+    <div className={cardStyle === 'normal' ? 'product-card' : 'product-card-sold-out'}>
       <img src={imageLink} alt={name} />
       <p>
         {name}
@@ -27,6 +27,7 @@ function ProductCard(props) {
   );
 }
 ProductCard.propTypes = {
+  cardStyle: PropTypes.string.isRequired,
   id: PropTypes.number.isRequired,
   name: PropTypes.string.isRequired,
   imageLink: PropTypes.string.isRequired,

@@ -15,7 +15,7 @@ function Counter(props) {
     if (direc === '+' && cartValue < max) {
       const patchCart = async () => {
         axios.patch(`http://localhost:8080/products/${id}/cart`, {
-          value: cart + 1,
+          value: cartValue + 1,
         });
         setCartValue(cartValue + 1);
         setCartCount(cartCount + 1);
@@ -24,7 +24,7 @@ function Counter(props) {
     } else if (direc === '-' && cartValue > 0) {
       const patchCart = async () => {
         axios.patch(`http://localhost:8080/products/${id}/cart`, {
-          value: cart - 1,
+          value: cartValue - 1,
         });
         setCartValue(cartValue - 1);
         setCartCount(cartCount - 1);
