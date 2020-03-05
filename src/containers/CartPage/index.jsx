@@ -9,29 +9,41 @@ import './index.css';
 
 const CartPage = (props) => {
   const history = useHistory();
-  const { cartCount } = props;
-  const [categories, setCategories] = useState([]);
-  const [productList, setProductList] = useState([]);
-  const filteredProducts = {};
-  let totalCost = 0;
+  const [productsList, setProductsList] = useState([]);
+  const [filteredProducts, setFilteredProducts] = useState({});
+  const [totalCost, setTotalCost] = useState(0);
+  const [cartCount, setCartCount] = useState(0);
   useEffect(() => {
     const getProductList = async () => {
+      let total = 0;
+      let cart = 0;
       const productResponse = await axios.get('http://localhost:8080/products');
-      setProductList(productResponse.data);
-      const categoriesResponse = await axios.get('http://localhost:8080/categories');
-      setCategories(categoriesResponse.data);
-      productList.forEach((product) => {
+      setProductsList(productResponse.data);
+      //   const categoriesResponse = await axios.get('http://localhost:8080/categories');
+      //   setCategories(categoriesResponse.data);
+      //   console.log(productList);
+      productResponse.data.forEach((product) => {
         if (product.cart !== 0) {
-          filteredProducts[product.category].push(product);
-          totalCost += product.cart * product.price;
+          if (filteredProducts[product.category] === undefined) {
+            filteredProducts[product.category] = [product];
+            total += product.cart * product.price;
+            cart += product.cart;
+          } else {
+            filteredProducts[product.category].push(product);
+            total += product.cart * product.price;
+            cart += product.cart;
+          }
         }
       });
+      setTotalCost(total);
+      setCartCount(cart);
     };
     getProductList();
   }, []);
   const onCheckout = async () => {
     const patchQuantities = async () => {
-      const response = await axios.patch('http://localhost:8080/quantities', productList);
+      console.log(productsList);
+      await axios.patch('http://localhost:8080/quantities', productsList);
       history.push('/');
     };
     patchQuantities();
@@ -48,13 +60,10 @@ const CartPage = (props) => {
         items)
       </div>
       <Table filteredProducts={filteredProducts} />
-      <TotalCard price={totalCost} onClickHandler={onCheckout} />
+      <TotalCard total={totalCost} onClickHandler={onCheckout} />
       <Button buttonColor="grey" text="Continue Shopping" onClickHandler={onContinueShopping} />
     </div>
   );
-};
-CartPage.propTypes = {
-  cartCount: PropTypes.number.isRequired,
 };
 
 export default CartPage;

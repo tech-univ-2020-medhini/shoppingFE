@@ -9,6 +9,7 @@ import logo from './logo.svg';
 import './App.css';
 
 import ProductsPage from './containers/ProductsPage';
+import CartPage from './containers/CartPage';
 
 function App() {
   const [productList, setProductsList] = useState([]);
@@ -27,7 +28,9 @@ function App() {
       </div>
       <Router>
         <Switch>
-          <Route exact path="/cart" />
+          <Route exact path="/cart">
+            <CartPage cartCount={cartCount} />
+          </Route>
           <Route path="/">
             <ProductsPage
               productList={productList}
