@@ -1,0 +1,28 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the cart table should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="table"
+  >
+    <table>
+      <tbody>
+        <tr>
+          <th>
+            Item
+          </th>
+          <th>
+            Price
+          </th>
+          <th>
+            Quantity
+          </th>
+          <th>
+            Subtotal
+          </th>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+</DocumentFragment>
+`;
