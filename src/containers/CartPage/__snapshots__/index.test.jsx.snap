@@ -1,0 +1,88 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`the cart page container should render correctly 1`] = `
+<DocumentFragment>
+  <div
+    class="cart-page"
+  >
+    <div
+      class="cart-text"
+    >
+      Your Shopping Cart (0 items)
+    </div>
+    <div
+      class="cart-page-display"
+    >
+      <div
+        class="table"
+      >
+        <table
+          border="1"
+        >
+          <tbody>
+            <tr>
+              <th>
+                Item
+              </th>
+              <th>
+                Price
+              </th>
+              <th>
+                Quantity
+              </th>
+              <th>
+                Subtotal
+              </th>
+            </tr>
+          </tbody>
+          <tbody />
+        </table>
+      </div>
+      <div
+        class="card-and-button"
+      >
+        <div
+          class="total-card"
+        >
+          <div
+            class="total-card-text"
+          >
+            <div
+              class="total"
+            >
+              Total
+            </div>
+            <div
+              class="rs"
+            >
+              RS
+            </div>
+            <div
+              class="price"
+            >
+              0
+            </div>
+          </div>
+          <hr />
+          <div
+            class="total-checkout"
+          >
+            <button
+              class="button-yellow"
+              type="button"
+            >
+              Checkout
+            </button>
+          </div>
+        </div>
+        <button
+          class="button-white"
+          type="button"
+        >
+          Continue Shopping
+        </button>
+      </div>
+    </div>
+  </div>
+</DocumentFragment>
+`;

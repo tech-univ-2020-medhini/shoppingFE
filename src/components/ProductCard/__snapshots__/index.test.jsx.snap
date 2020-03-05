@@ -3,7 +3,7 @@
 exports[`the product cards should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="product-card"
+    class="product-card-sold-out"
   >
     <img />
     <p />

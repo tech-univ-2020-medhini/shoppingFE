@@ -6,24 +6,33 @@ exports[`the total card should render correctly 1`] = `
     class="total-card"
   >
     <div
-      class="total"
+      class="total-card-text"
     >
-      Total
+      <div
+        class="total"
+      >
+        Total
+      </div>
+      <div
+        class="rs"
+      >
+        RS
+      </div>
+      <div
+        class="price"
+      />
     </div>
-    <div
-      class="rs"
-    >
-      RS
-    </div>
-    <div
-      class="price"
-    />
     <hr />
-    <button
-      type="button"
+    <div
+      class="total-checkout"
     >
-      Checkout
-    </button>
+      <button
+        class="button-yellow"
+        type="button"
+      >
+        Checkout
+      </button>
+    </div>
   </div>
 </DocumentFragment>
 `;

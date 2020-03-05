@@ -3,21 +3,11 @@
 exports[`the products page container should render correctly 1`] = `
 <DocumentFragment>
   <div
-    class="Song-page"
+    class="products-container"
   >
     <p />
     <div
-      class="filter-bar"
-    >
-      <button
-        class="category-button"
-        type="button"
-      >
-        All
-      </button>
-    </div>
-    <div
-      class="songs-container"
+      class="products-list"
     />
   </div>
 </DocumentFragment>

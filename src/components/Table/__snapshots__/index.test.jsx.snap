@@ -5,7 +5,9 @@ exports[`the cart table should render correctly 1`] = `
   <div
     class="table"
   >
-    <table>
+    <table
+      border="1"
+    >
       <tbody>
         <tr>
           <th>
@@ -22,6 +24,7 @@ exports[`the cart table should render correctly 1`] = `
           </th>
         </tr>
       </tbody>
+      <tbody />
     </table>
   </div>
 </DocumentFragment>

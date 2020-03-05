@@ -3,6 +3,7 @@
 exports[`the button should render correctly 1`] = `
 <DocumentFragment>
   <button
+    class="button-white"
     type="button"
   />
 </DocumentFragment>

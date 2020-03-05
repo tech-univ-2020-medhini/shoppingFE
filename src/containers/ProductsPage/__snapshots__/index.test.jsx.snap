@@ -5,25 +5,14 @@ exports[`the products page container should render correctly 1`] = `
   <div
     class="products-page"
   >
-    <div>
-      Filter categories
-    </div>
     <div
-      class="filter-bar"
+      class="products-header"
     >
-      <button
-        class="category-button"
-        type="button"
+      <div
+        class="product-page-text"
       >
-        All
-      </button>
-    </div>
-    <div
-      class="Song-page"
-    >
-      <p>
-        All
-      </p>
+        Filter categories
+      </div>
       <div
         class="filter-bar"
       >
@@ -34,8 +23,15 @@ exports[`the products page container should render correctly 1`] = `
           All
         </button>
       </div>
+    </div>
+    <div
+      class="products-container"
+    >
+      <p>
+        All
+      </p>
       <div
-        class="songs-container"
+        class="products-list"
       />
     </div>
   </div>
