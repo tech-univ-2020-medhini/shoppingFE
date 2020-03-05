@@ -7,6 +7,16 @@ exports[`the products page container should render correctly 1`] = `
   >
     <p />
     <div
+      class="filter-bar"
+    >
+      <button
+        class="category-button"
+        type="button"
+      >
+        All
+      </button>
+    </div>
+    <div
       class="songs-container"
     />
   </div>
