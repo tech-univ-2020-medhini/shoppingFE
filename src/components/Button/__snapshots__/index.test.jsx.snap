@@ -4,6 +4,7 @@ exports[`the button should render correctly 1`] = `
 <DocumentFragment>
   <button
     class="button-white"
+    data-testid="test-btn"
     type="button"
   />
 </DocumentFragment>

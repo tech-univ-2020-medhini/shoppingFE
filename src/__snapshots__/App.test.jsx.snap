@@ -52,6 +52,7 @@ exports[`the cart page container should render correctly 1`] = `
           >
             <button
               class="category-button"
+              data-testid="filter-btn"
               type="button"
             >
               All

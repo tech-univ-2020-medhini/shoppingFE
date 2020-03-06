@@ -7,6 +7,7 @@ exports[`the product cards should render correctly 1`] = `
   >
     <button
       class="category-button"
+      data-testid="filter-btn"
       type="button"
     >
       All

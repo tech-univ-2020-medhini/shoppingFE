@@ -28,6 +28,7 @@ exports[`the total card should render correctly 1`] = `
     >
       <button
         class="button-yellow"
+        data-testid="test-btn"
         type="button"
       >
         Checkout

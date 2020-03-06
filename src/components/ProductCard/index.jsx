@@ -9,7 +9,7 @@ function ProductCard(props) {
     id, name, imageLink, price, cart, quantity, cartCount, setCartCount, cardStyle,
   } = props;
   return (
-    <div className={cardStyle === 'normal' ? 'product-card' : 'product-card-sold-out'}>
+    <div data-testid="product-card" className={cardStyle === 'normal' ? 'product-card' : 'product-card-sold-out'}>
       <img src={imageLink} alt={name} />
       <p>
         {name}

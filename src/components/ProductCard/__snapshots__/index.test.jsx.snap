@@ -1,9 +1,10 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`the product cards should render correctly 1`] = `
+exports[`the product cards should render correctly when cardStyle is normal 1`] = `
 <DocumentFragment>
   <div
-    class="product-card-sold-out"
+    class="product-card"
+    data-testid="product-card"
   >
     <img />
     <p />
@@ -12,15 +13,52 @@ exports[`the product cards should render correctly 1`] = `
     </p>
     <div
       class="counter"
+      data-testid="counter-div"
     >
       <button
         class="counter-button"
+        data-testid="test-decrement"
         type="button"
       >
         -
       </button>
       <button
         class="counter-button"
+        data-testid="test-increment"
+        type="button"
+      >
+        +
+      </button>
+    </div>
+  </div>
+</DocumentFragment>
+`;
+
+exports[`the product cards should render correctly when cardStyle is sold-out 1`] = `
+<DocumentFragment>
+  <div
+    class="product-card-sold-out"
+    data-testid="product-card"
+  >
+    <img />
+    <p />
+    <p>
+      MRP  /
+    </p>
+    <div
+      class="counter"
+      data-testid="counter-div"
+    >
+      <button
+        class="counter-button"
+        data-testid="test-decrement"
+        type="button"
+      >
+        -
+      </button>
+      <button
+        class="counter-button"
+        data-testid="test-increment"
         type="button"
       >
         +

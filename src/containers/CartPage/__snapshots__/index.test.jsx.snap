@@ -69,6 +69,7 @@ exports[`the cart page container should render correctly 1`] = `
           >
             <button
               class="button-yellow"
+              data-testid="test-btn"
               type="button"
             >
               Checkout
@@ -77,6 +78,7 @@ exports[`the cart page container should render correctly 1`] = `
         </div>
         <button
           class="button-white"
+          data-testid="test-btn"
           type="button"
         >
           Continue Shopping

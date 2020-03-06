@@ -18,6 +18,7 @@ exports[`the products page container should render correctly 1`] = `
       >
         <button
           class="category-button"
+          data-testid="filter-btn"
           type="button"
         >
           All

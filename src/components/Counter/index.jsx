@@ -33,10 +33,10 @@ function Counter(props) {
     }
   };
   return (
-    <div className="counter">
-      <button className="counter-button" onClick={() => onClickCounter('-')} type="button">-</button>
+    <div className="counter" data-testid="counter-div">
+      <button data-testid="test-decrement" className="counter-button" onClick={() => onClickCounter('-')} type="button">-</button>
       {cartValue}
-      <button className="counter-button" onClick={() => onClickCounter('+')} type="button">+</button>
+      <button data-testid="test-increment" className="counter-button" onClick={() => onClickCounter('+')} type="button">+</button>
     </div>
 
   );

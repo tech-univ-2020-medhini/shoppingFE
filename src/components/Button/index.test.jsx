@@ -9,4 +9,11 @@ describe('the button', () => {
 
     expect(asFragment()).toMatchSnapshot();
   });
+  it('should call the onClick prop when the button is clicked', () => {
+    const onClickMock = jest.fn();
+    const { getByTestId } = render(<Button onClickHandler={onClickMock} />);
+
+    fireEvent.click(getByTestId('test-btn'));
+    expect(onClickMock).toHaveBeenCalled();
+  });
 });
