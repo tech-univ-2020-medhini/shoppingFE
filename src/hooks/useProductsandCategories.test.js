@@ -1,5 +1,5 @@
 import axios from 'axios';
-import { renderHook, act } from '@testing-library/react-hooks';
+import { renderHook } from '@testing-library/react-hooks';
 import useProductsAndCategories from './useProductsAndCategories';
 
 describe('the useFilteredProducts hook', () => {

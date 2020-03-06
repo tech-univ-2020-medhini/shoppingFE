@@ -11,7 +11,6 @@ function Counter(props) {
   const { cart } = props;
   const [cartValue, setCartValue] = useState(cart);
   const onClickCounter = (direc) => {
-    console.log(max);
     if (direc === '+' && cartValue < max) {
       const patchCart = async () => {
         axios.patch(`http://localhost:8080/products/${id}/cart`, {
