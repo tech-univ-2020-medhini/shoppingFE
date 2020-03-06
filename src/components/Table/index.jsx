@@ -25,7 +25,7 @@ function Table(props) {
 
   return (
     <div className="table">
-      <table border={1}>
+      <table border={1} className="table-class">
         <tr>
           <th>
             Item

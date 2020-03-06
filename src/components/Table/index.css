@@ -1,7 +1,11 @@
 table, th, td{
-   border-collapse:collapse; 
+   border-collapse:collapse;
+   padding: 1rem; 
 }
 .table-category{
     background-color: rgb(196,196,196);
     text-align: left;
+}
+.table{
+    box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2);
 }

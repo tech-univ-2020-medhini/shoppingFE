@@ -8,6 +8,7 @@
 }
 .product-page-text{
     display: flex;
+    flex-wrap: wrap;
     padding-top: 1rem;
     padding-bottom: 1rem;
 }

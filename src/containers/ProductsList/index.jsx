@@ -77,9 +77,9 @@ const ProductList = (props) => {
 
   return (
     <div className="products-container">
-      <p>
+      <div className="categories-text">
         {filterCategory}
-      </p>
+      </div>
       <div className="products-list">
         {products}
       </div>

@@ -5,3 +5,9 @@
     padding: 1rem;
     justify-content: space-around;
 }
+.categories-text{
+    display:flex;
+    padding-left: 2rem;
+    padding-top: 2rem;
+    font-size: xx-large;
+}

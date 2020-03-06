@@ -4,7 +4,7 @@ import { Router } from 'react-router-dom';
 import { createMemoryHistory } from 'history';
 import axios from 'axios';
 import CartPage from './index';
-import useFilteredProducts from '../../hooks/useFilteredProducts';
+// import useFilteredProducts from '../../hooks/useFilteredProducts';
 
 
 describe('the cart page container', () => {
