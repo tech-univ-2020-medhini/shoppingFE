@@ -21,7 +21,13 @@ function ProductCard(props) {
         {' '}
         /
       </p>
-      <Counter cart={cart} max={quantity} id={id} cartCount={cartCount} setCartCount={setCartCount} />
+      <Counter
+        cart={cart}
+        max={quantity}
+        id={id}
+        cartCount={cartCount}
+        setCartCount={setCartCount}
+      />
     </div>
 
   );

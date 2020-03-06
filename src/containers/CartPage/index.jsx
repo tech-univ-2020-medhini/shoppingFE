@@ -1,5 +1,4 @@
 import React, { useState, useEffect } from 'react';
-import PropTypes from 'prop-types';
 import axios from 'axios';
 import { useHistory } from 'react-router-dom';
 import Table from '../../components/Table';
@@ -10,6 +9,7 @@ import './index.css';
 const CartPage = () => {
   const history = useHistory();
   const [productsList, setProductsList] = useState([]);
+  // eslint-disable-next-line no-unused-vars
   const [filteredProducts, setFilteredProducts] = useState({});
   const [totalCost, setTotalCost] = useState(0);
   const [cartCount, setCartCount] = useState(0);
@@ -39,7 +39,6 @@ const CartPage = () => {
   }, []);
   const onCheckout = async () => {
     const patchQuantities = async () => {
-      console.log(productsList);
       await axios.patch('http://localhost:8080/quantities', productsList);
       history.push('/');
     };

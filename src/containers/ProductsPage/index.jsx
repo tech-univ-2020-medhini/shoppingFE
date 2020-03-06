@@ -6,15 +6,18 @@ import FilterBar from '../../components/FilterBar';
 import './index.css';
 
 const ProductsPage = (props) => {
-  const { productList, cartCount, setCartCount } = props;
+  const { cartCount, setCartCount } = props;
   const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('All');
+  const [productList, setProductsList] = useState([]);
   useEffect(() => {
-    const getCategories = async () => {
-      const response = await axios.get('http://localhost:8080/categories');
-      setCategories(response.data);
+    const getProductsAndCategories = async () => {
+      const productResponse = await axios.get('http://localhost:8080/products');
+      setProductsList(productResponse.data);
+      const categoriesResponse = await axios.get('http://localhost:8080/categories');
+      setCategories(categoriesResponse.data);
     };
-    getCategories();
+    getProductsAndCategories();
   }, []);
   return (
     <div className="products-page">
@@ -24,12 +27,16 @@ const ProductsPage = (props) => {
         </div>
         <FilterBar categoryList={categories} onCLickFilter={setSelectedCategory} />
       </div>
-      <ProductList filterCategory={selectedCategory} productList={productList} cartCount={cartCount} setCartCount={setCartCount} />
+      <ProductList
+        filterCategory={selectedCategory}
+        productList={productList}
+        cartCount={cartCount}
+        setCartCount={setCartCount}
+      />
     </div>
   );
 };
 ProductsPage.propTypes = {
-  productList: PropTypes.arrayOf(PropTypes.object).isRequired,
   cartCount: PropTypes.number.isRequired,
   setCartCount: PropTypes.func.isRequired,
 };

@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import {
   BrowserRouter as Router,
   Switch,
@@ -15,7 +15,6 @@ import {
   faShoppingCart,
 } from '@fortawesome/free-solid-svg-icons';
 
-import axios from 'axios';
 import './App.css';
 
 import ProductsPage from './containers/ProductsPage';
@@ -28,15 +27,7 @@ library.add(
 
 
 function App() {
-  const [productList, setProductsList] = useState([]);
   const [cartCount, setCartCount] = useState(0);
-  useEffect(() => {
-    const getProducts = async () => {
-      const response = await axios.get('http://localhost:8080/products');
-      setProductsList(response.data);
-    };
-    getProducts();
-  }, []);
   return (
     <div className="App">
       <Router>
@@ -50,11 +41,10 @@ function App() {
         <div className="app-body">
           <Switch>
             <Route exact path="/cart">
-              <CartPage cartCount={cartCount} />
+              <CartPage />
             </Route>
             <Route path="/">
               <ProductsPage
-                productList={productList}
                 cartCount={cartCount}
                 setCartCount={setCartCount}
               />
