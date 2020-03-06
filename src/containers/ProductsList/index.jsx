@@ -71,7 +71,6 @@ const ProductList = (props) => {
         />);
       }
     });
-    console.log(products);
     products = [...products, ...soldOutProducts];
   }
 
