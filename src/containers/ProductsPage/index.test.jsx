@@ -14,7 +14,7 @@ describe('the products page container', () => {
     const mockAxios = jest.spyOn(axios, 'get');
     mockAxios.mockResolvedValue({ data: [] });
 
-    const { getByTestId } = render(<ProductsPage />);
+    render(<ProductsPage />);
     expect(mockAxios).toHaveBeenCalledWith('http://localhost:8080/products');
   });
 });

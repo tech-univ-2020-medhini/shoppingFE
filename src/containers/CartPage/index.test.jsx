@@ -17,7 +17,7 @@ describe('the cart page container', () => {
     const mockAxios = jest.spyOn(axios, 'get');
     mockAxios.mockResolvedValue({ data: [] });
 
-    const { getByTestId } = render(<Router history={history}><CartPage /></Router>);
+    render(<Router history={history}><CartPage /></Router>);
     expect(mockAxios).toHaveBeenCalledWith('http://localhost:8080/products');
   });
 });

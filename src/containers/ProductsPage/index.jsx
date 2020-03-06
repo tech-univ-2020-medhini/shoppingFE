@@ -1,24 +1,15 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState } from 'react';
 import PropTypes from 'prop-types';
-import axios from 'axios';
+
 import ProductList from '../ProductsList';
 import FilterBar from '../../components/FilterBar';
 import './index.css';
+import useProductsAndCategories from '../../hooks/useProductsAndCategories';
 
 const ProductsPage = (props) => {
   const { cartCount, setCartCount } = props;
-  const [categories, setCategories] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState('All');
-  const [productList, setProductsList] = useState([]);
-  useEffect(() => {
-    const getProductsAndCategories = async () => {
-      const productResponse = await axios.get('http://localhost:8080/products');
-      setProductsList(productResponse.data);
-      const categoriesResponse = await axios.get('http://localhost:8080/categories');
-      setCategories(categoriesResponse.data);
-    };
-    getProductsAndCategories();
-  }, []);
+  const [categories, productList] = useProductsAndCategories();
   return (
     <div className="products-page">
       <div className="products-header">
